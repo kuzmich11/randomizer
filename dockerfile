@@ -7,11 +7,11 @@ WORKDIR /app
 # Копирование package.json и package-lock.json
 COPY package*.json ./
 
-# Установка React и необходимых зависимостей
-RUN npm install --save react react-dom
-
 # Установка зависимостей
 RUN npm install --omit=dev
+
+# Если нужно установить react-scripts отдельно:
+RUN npm install react-scripts --save-dev
 
 # Копирование остальных файлов проекта
 COPY . .
