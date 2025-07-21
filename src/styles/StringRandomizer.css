@@ -1,0 +1,91 @@
+.string-randomizer {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: space-around;
+ padding: 20px;
+}
+
+.confetti-canvas {
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 50%;
+ height: 50%;
+ pointer-events: none;
+}
+
+.input-wrapper {
+ display: flex;
+ gap: 20px;
+ width: 50%;
+ max-width: 1000px;
+}
+
+.input-container {
+ flex: 1;
+ width: 80%;
+}
+
+.controls-container {
+ display: flex;
+ flex-direction: column;
+ align-items: flex-start;
+ gap: 10px;
+}
+
+.button-group {
+ display: flex;
+ gap: 10px;
+}
+
+.string-randomizer textarea {
+ width: 80%;
+ padding: 12px;
+ border: 1px solid #000000;
+ border-radius: 8px;
+ resize: vertical;
+ font-size: 16px;
+}
+
+.string-randomizer button {
+ padding: 12px 24px;
+ font-size: 16px;
+ font-weight: 500;
+ color: white;
+ background-color: #007bff;
+ border: none;
+ border-radius: 8px;
+ cursor: pointer;
+ transition: background-color 0.3s;
+}
+
+.string-randomizer button:hover {
+ background-color: #0056b3;
+}
+
+.result {
+ background-color: #f8f9fa;
+ border-radius: 8px;
+ font-size: 18px;
+ font-weight: 600;
+}
+
+.output {
+ padding: 12px;
+ border-radius: 8px;
+ font-size: 18px;
+ font-weight: 600;
+}
+
+@media (max-width: 768px) {
+.input-wrapper {
+ flex-direction: column;
+ gap: 15px;
+ width: 100%;
+ }
+
+.input-container {
+ width: 100%;
+ }
+}

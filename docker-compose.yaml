@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  nodejs-app:
+    # Сборка образа из Dockerfile в текущей директории
+    build: .
+    # Проброс порта с контейнера на хост
+    ports:
+      - "3000:3000"
+    # Монтирование директории проекта
+    volumes:
+      - .:/app
+    # Переменные окружения
+    environment:
+      - NODE_ENV=development
+    # Определение рабочей директории
+    working_dir: /app

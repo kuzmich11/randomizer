@@ -1,0 +1,127 @@
+/* Decoder.css */
+.decoder {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ padding: 20px;
+ background-color: #f9f9f9;
+}
+
+.input-container {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ gap: 15px;
+ width: 100%;
+ max-width: 600px;
+}
+
+.input-field {
+ min-height: 120px;
+ width: 100%;
+ padding: 10px;
+ font-size: 14px;
+ resize: vertical;
+ border: 1px solid #ccc;
+ border-radius: 4px;
+ box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+ transition: box-shadow 0.3s;
+}
+
+.input-field:focus {
+ box-shadow: inset 0 2px 5px rgba(0,0,0,0.2);
+ border-color: #007bff;
+}
+
+.process-button {
+ padding: 15px 25px;
+ font-size: 24px;
+ cursor: pointer;
+ background-color: #007bff;
+ color: white;
+ border: none;
+ border-radius: 8px;
+ display: flex;
+ align-items: center;
+ gap: 5px;
+ transition: background-color 0.3s, box-shadow 0.3s;
+ box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+ position: relative;
+}
+
+.process-button:hover {
+ background-color: #0056b3;
+ box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+}
+
+.process-button:active {
+ transform: translateY(1px);
+ box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+.arrow {
+ font-size: 24px;
+ font-weight: bold;
+ position: relative;
+ display: inline-block;
+}
+
+.arrow::before {
+ content: '';
+ position: absolute;
+ width: 100%;
+ height: 100%;
+ background-color: rgba(0,0,0,0.1);
+ transform: translateY(1px) translateX(1px);
+ opacity: 0.5;
+ z-index: -1;
+}
+
+.arrow::after {
+ content: attr(data-content);
+ position: absolute;
+ color: rgba(255,255,255,0.8);
+ transform: translateY(-1px) translateX(-1px);
+ z-index: 1;
+}
+
+.error-message {
+ margin: 15px 0;
+ padding: 12px;
+ background-color: #f8d7da;
+ border: 1px solid #f5c6cb;
+ border-radius: 8px;
+ color: #721c24;
+ font-size: 14px;
+ text-align: center;
+}
+
+@media (max-width: 768px) {
+.input-container {
+ flex-direction: column;
+ gap: 10px;
+ }
+ 
+.input-field {
+ min-height: 100px;
+ }
+ 
+.process-button {
+ padding: 12px 20px;
+ font-size: 20px;
+ }
+}
+
+/* Дополнительные стили для лучшей читаемости */
+body {
+ font-family: 'Roboto', Arial, sans-serif;
+ background-color: #f4f4f9;
+ margin: 0;
+ padding: 0;
+}
+
+h2 {
+ color: #333;
+ margin-bottom: 20px;
+ text-align: center;
+}
