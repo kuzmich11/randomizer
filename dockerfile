@@ -10,6 +10,9 @@ COPY package*.json ./
 # Установка зависимостей
 RUN npm install --omit=dev
 
+# Если нужно установить react-scripts отдельно:
+RUN npm install react-scripts --save-dev
+
 # Копирование остальных файлов проекта
 COPY . .
 
