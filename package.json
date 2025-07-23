@@ -12,11 +12,8 @@
     "react-confetti": "^6.4.0",
     "react-dom": "^19.1.0",
     "react-router-dom": "^7.7.0",
-    "react-scripts": "^0.0.0",
     "rimraf": "^6.0.1",
     "web-vitals": "^2.1.4"
-  },"devDependencies": {
-    "react-scripts": "5.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -41,5 +38,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "react-scripts": "^5.0.1"
   }
 }

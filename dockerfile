@@ -1,5 +1,4 @@
-# Базовый образ с Node.js версии 16 (можно выбрать другую версию)
-FROM node:22
+FROM node:latest
 
 # Установка рабочей директории
 WORKDIR /app
@@ -8,7 +7,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # Установка зависимостей
-RUN npm install --omit=dev
+RUN npm install
 
 # Если нужно установить react-scripts отдельно:
 RUN npm install react-scripts --save-dev
