@@ -1,17 +1,22 @@
-# Этап сборки
-FROM node:22 as builder
-WORKDIR /app
-COPY package*.json ./
-RUN npm install --force
-COPY . .
-RUN npm run build
+FROM node:latest
 
-# Этап продакшена
-FROM node:22-slim
+# Установка рабочей директории
 WORKDIR /app
-COPY --from=builder /app/build ./build
-COPY --from=builder /app/package*.json ./
-RUN npm install --only=production
-COPY --from=builder /app/public ./public
+
+# Копирование package.json и package-lock.json
+COPY package*.json ./
+
+# Установка зависимостей
+RUN npm install
+
+# Если нужно установить react-scripts отдельно:
+RUN npm install react-scripts --save-dev
+
+# Копирование остальных файлов проекта
+COPY . .
+
+# Экспозиция порта (стандартный порт для Node.js приложений)
 EXPOSE 3000
+
+# Команда для запуска приложения
 CMD ["npm", "start"]
